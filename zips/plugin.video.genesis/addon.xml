@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<addon id="plugin.video.genesis" name="Genesis" version="9.2.6" provider-name="Karlosh, lambda">
+    <requires>
+        <import addon="script.module.six" />
+        <import addon="script.module.kodi-six" />
+        <import addon="script.module.simplejson" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.resolveurl" />
+        <import addon="script.trakt" optional="true" />
+        <import addon="plugin.video.youtube" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">The origins of streaming</summary>
+		<description lang="en">Original Genesis from 2015 updated to fully work again</description>
+		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider. Special thanks to lambda as this is the addon when he left the genesis project, all that has been added to it is code to make it function again</disclaimer>
+		<forum></forum>
+		<source></source>
+		<website></website>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		    <banner>resources/media/gone/banner.png</banner>
+            <clearlogo>resources/media/gone/banner.png</clearlogo>
+			<screenshot>resources/screenshots/screenshot001.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot002.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
+		</assets>
+		<news>
+[B]------------------------
+Genesis v9.2.6 (21-Nov-24)
+------------------------[/B]
+
+- [COLOR orange]NOTE: Genesis is a free addon and it will always be a free addon.[/COLOR]
+- [COLOR orange]NOTE: Anyone that tells you otherwise is trying to steal your money.[/COLOR]
+
+- Fixed New Sources
+- Faster loading times
+- Complete Code Update to exodus and more
+		</news>
+	</extension>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="resources/contextMenu/context_add.py">
+				<label>[B]Genesis[/B] - Add To Favs</label>
+				<visible>
+					String.StartsWith(ListItem.path,plugin://plugin.video.genesis/) + 
+					String.IsEqual(ListItem.Property(gen_widget), true) + !String.IsEqual(ListItem.Property(gen_favs), true)
+				</visible>
+			</item>
+			<item library="resources/contextMenu/context_remove.py">
+				<label>[B]Genesis[/B] - Remove From Favs</label>
+				<visible>
+					String.StartsWith(ListItem.path,plugin://plugin.video.genesis/) + 
+					String.IsEqual(ListItem.Property(gen_widget), true) + String.IsEqual(ListItem.Property(gen_favs), true)
+				</visible>
+			</item>
+			<item library="resources/contextMenu/context_refresh.py">
+				<label>[B]Genesis[/B] - Reload Widgets</label>
+				<visible>
+					String.StartsWith(ListItem.path,plugin://plugin.video.genesis/) + 
+					String.IsEqual(ListItem.Property(gen_widget), true)
+				</visible>
+			</item>
+		</menu>
+	</extension>
+</addon>
