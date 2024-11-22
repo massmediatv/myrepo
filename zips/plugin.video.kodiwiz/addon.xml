@@ -1,1 +1,23 @@
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.kodiwiz" name="Karls Wizard" version="11.0.1" provider-name="[B]KH86[/B]">
+  <requires>
+    <import addon="script.module.requests" />
+    <import addon="script.module.beautifulsoup4" />
+  </requires>
+  <extension point="xbmc.python.script" library="main.py"> 
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en">easy access to setup files and maintenance</description>
+    <platform>all</platform>
+    <assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+		<screenshot>resources/screenshots/screenshot001.jpg</screenshot>
+		<screenshot>resources/screenshots/screenshot002.jpg</screenshot>
+		<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
+	</assets>
+  </extension>
+  
+</addon>
