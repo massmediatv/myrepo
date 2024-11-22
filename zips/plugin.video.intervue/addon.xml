@@ -1,1 +1,11 @@
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.intervue" name="InterVUE" version="1.0.6" provider-name="[B]subTeam[/B]">
+  
+  <extension point="xbmc.python.script" library="main.py"> 
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
